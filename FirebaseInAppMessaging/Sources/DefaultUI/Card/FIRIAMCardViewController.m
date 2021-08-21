@@ -1,4 +1,4 @@
-/*
+/*
  * Copyright 2019 Google
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -97,7 +97,7 @@
   [super viewDidLoad];
 
   self.cardView.backgroundColor = self.cardDisplayMessage.displayBackgroundColor;
-  self.cardView.layer.cornerRadius = 4;
+  self.cardView.layer.cornerRadius = 20;
 
   self.bodyTextView.contentInset = UIEdgeInsetsZero;
   self.bodyTextView.textContainer.lineFragmentPadding = 0;

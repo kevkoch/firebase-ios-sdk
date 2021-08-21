@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -71,14 +71,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messaging Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzo-9i-rXZ">
-                                <rect key="frame" x="70" y="47" width="324" height="20.333333333333329"/>
+                                <rect key="frame" x="70" y="47" width="324" height="17"/>
                                 <accessibility key="accessibilityConfiguration" identifier="banner-message-title-view"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="message body" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOK-vx-mU8">
-                                <rect key="frame" x="70" y="75.333333333333343" width="324" height="286.66666666666663"/>
+                                <rect key="frame" x="70" y="72" width="324" height="290"/>
                                 <accessibility key="accessibilityConfiguration" identifier="banner-body-label"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
@@ -387,11 +387,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aft-rr-icV" userLabel="Card view">
-                                <rect key="frame" x="87" y="87" width="240" height="240"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aft-rr-icV" userLabel="Card view">
+                                <rect key="frame" x="49" y="69" width="320" height="582"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gB0-8W-G9z">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="160"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVh-9O-yfC" userLabel="Title label">
+                                        <rect key="frame" x="64" y="247" width="192" height="23"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="card-title-label"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-3x-WHk" userLabel="Primary action button">
+                                        <rect key="frame" x="214" y="532" width="66" height="30"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="card-primary-action-button"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="pxm-yD-xhm"/>
+                                        </constraints>
+                                        <state key="normal" title="Primary">
+                                            <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="primaryActionButtonTapped:" destination="oTF-1C-LZP" eventType="touchUpInside" id="Jk0-dp-Qgj"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Feg-VM-jUf" userLabel="Secondary action button">
+                                        <rect key="frame" x="40" y="532" width="74" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="card-secondary-action-button"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="bpF-9w-pDe"/>
+                                        </constraints>
+                                        <state key="normal" title="Secondary"/>
+                                        <connections>
+                                            <action selector="secondaryActionButtonTapped:" destination="oTF-1C-LZP" eventType="touchUpInside" id="jCJ-3T-fim"/>
+                                        </connections>
+                                    </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tmr-ar-k7h">
+                                        <rect key="frame" x="64" y="316" width="192" height="35"/>
+                                    </scrollView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" editable="NO" text="Label" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elG-N9-aqH" userLabel="Body text view">
+                                        <rect key="frame" x="64" y="316" width="112" height="181"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="card-body-text-view"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gB0-8W-G9z">
+                                        <rect key="frame" x="40" y="32" width="240" height="160"/>
                                         <accessibility key="accessibilityConfiguration" identifier="card-image-view" label="In-app message image">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -428,78 +475,35 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVh-9O-yfC" userLabel="Title label">
-                                        <rect key="frame" x="24" y="184" width="192" height="26.333333333333343"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="card-title-label"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tmr-ar-k7h">
-                                        <rect key="frame" x="24" y="234.33333333333331" width="192" height="38"/>
-                                        <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" editable="NO" text="Label" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elG-N9-aqH" userLabel="Body text view">
-                                                <rect key="frame" x="0.0" y="0.0" width="192" height="38"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="card-body-text-view"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="elG-N9-aqH" firstAttribute="leading" secondItem="Tmr-ar-k7h" secondAttribute="leading" id="4qa-2a-exy"/>
-                                            <constraint firstItem="elG-N9-aqH" firstAttribute="top" secondItem="Tmr-ar-k7h" secondAttribute="top" id="7y6-2U-B6m"/>
-                                            <constraint firstItem="elG-N9-aqH" firstAttribute="height" secondItem="Tmr-ar-k7h" secondAttribute="height" priority="250" id="8cx-KT-4vL"/>
-                                            <constraint firstAttribute="trailing" secondItem="elG-N9-aqH" secondAttribute="trailing" id="GKi-rJ-rWH"/>
-                                            <constraint firstAttribute="bottom" secondItem="elG-N9-aqH" secondAttribute="bottom" id="Ry3-6E-FqY"/>
-                                            <constraint firstItem="elG-N9-aqH" firstAttribute="width" secondItem="Tmr-ar-k7h" secondAttribute="width" id="dXF-bM-hYF"/>
-                                        </constraints>
-                                    </scrollView>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="1000" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-3x-WHk" userLabel="Primary action button">
-                                        <rect key="frame" x="163" y="186" width="53" height="30"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="card-primary-action-button"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="pxm-yD-xhm"/>
-                                        </constraints>
-                                        <state key="normal" title="Primary"/>
-                                        <connections>
-                                            <action selector="primaryActionButtonTapped:" destination="oTF-1C-LZP" eventType="touchUpInside" id="Jk0-dp-Qgj"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Feg-VM-jUf" userLabel="Secondary action button">
-                                        <rect key="frame" x="65" y="186" width="74" height="30"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="card-secondary-action-button"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="bpF-9w-pDe"/>
-                                        </constraints>
-                                        <state key="normal" title="Secondary"/>
-                                        <connections>
-                                            <action selector="secondaryActionButtonTapped:" destination="oTF-1C-LZP" eventType="touchUpInside" id="jCJ-3T-fim"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" identifier="message-card-view"/>
                                 <constraints>
+                                    <constraint firstItem="elG-N9-aqH" firstAttribute="leading" secondItem="Aft-rr-icV" secondAttribute="leading" constant="64" id="0Uv-Ac-eTU"/>
                                     <constraint firstItem="Tmr-ar-k7h" firstAttribute="top" secondItem="oVh-9O-yfC" secondAttribute="bottom" constant="24" id="1pM-Jd-Nka"/>
                                     <constraint firstItem="oVh-9O-yfC" firstAttribute="top" secondItem="Aft-rr-icV" secondAttribute="top" constant="24" identifier="Title label top padding - landscape" id="4aZ-wP-20V" userLabel="Title label top padding - landscape"/>
                                     <constraint firstItem="Tmr-ar-k7h" firstAttribute="leading" secondItem="Aft-rr-icV" secondAttribute="leading" constant="24" id="6oY-Eb-2Mh"/>
                                     <constraint firstItem="oVh-9O-yfC" firstAttribute="leading" secondItem="gB0-8W-G9z" secondAttribute="trailing" constant="24" identifier="Title label spacing after image view - landscape" id="7IV-jj-DjU" userLabel="Title label spacing after image view - landscape"/>
+                                    <constraint firstItem="elG-N9-aqH" firstAttribute="height" secondItem="Aft-rr-icV" secondAttribute="height" constant="-547" id="7xe-l0-VdH"/>
                                     <constraint firstAttribute="trailing" secondItem="aZE-3x-WHk" secondAttribute="trailing" constant="24" identifier="Primary action button right padding" id="9lx-l9-3We" userLabel="Primary action button right padding"/>
                                     <constraint firstItem="aZE-3x-WHk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Tmr-ar-k7h" secondAttribute="bottom" constant="24" id="OqZ-GD-cSz"/>
                                     <constraint firstItem="Feg-VM-jUf" firstAttribute="centerY" secondItem="aZE-3x-WHk" secondAttribute="centerY" identifier="Align action buttons vertically" id="PaU-zW-YCD" userLabel="Align action buttons vertically"/>
                                     <constraint firstItem="Tmr-ar-k7h" firstAttribute="leading" secondItem="gB0-8W-G9z" secondAttribute="trailing" constant="24" id="Q0o-hu-ttH"/>
+                                    <constraint firstAttribute="bottom" secondItem="elG-N9-aqH" secondAttribute="bottom" constant="231" id="QTb-fB-UUp"/>
                                     <constraint firstItem="oVh-9O-yfC" firstAttribute="leading" secondItem="Aft-rr-icV" secondAttribute="leading" constant="24" identifier="Title label left padding - portrait" id="RVJ-ts-fU5" userLabel="Title label left padding - portrait"/>
                                     <constraint firstItem="oVh-9O-yfC" firstAttribute="top" secondItem="gB0-8W-G9z" secondAttribute="bottom" constant="24" identifier="Title label top spacing under image view - portrait" id="T6F-Mi-UaM" userLabel="Title label top spacing under image view - portrait"/>
                                     <constraint firstAttribute="bottom" secondItem="aZE-3x-WHk" secondAttribute="bottom" constant="24" identifier="Primary action button bottom padding" id="THz-Qq-7VQ" userLabel="Primary action button bottom padding"/>
                                     <constraint firstAttribute="bottom" secondItem="gB0-8W-G9z" secondAttribute="bottom" identifier="Image view no bottom padding in card view - landscape" id="Voc-mp-Yh8" userLabel="Image view no bottom padding in card view - landscape"/>
                                     <constraint firstItem="aZE-3x-WHk" firstAttribute="leading" secondItem="Feg-VM-jUf" secondAttribute="trailing" constant="24" identifier="Secondary action button left spacing before primary action button" id="WOx-4M-WHo" userLabel="Secondary action button left spacing before primary action button"/>
+                                    <constraint firstAttribute="trailing" secondItem="elG-N9-aqH" secondAttribute="trailing" constant="64" id="XhN-EG-0M8"/>
                                     <constraint firstAttribute="trailing" secondItem="Tmr-ar-k7h" secondAttribute="trailing" constant="24" id="a9Y-vg-WG9"/>
                                     <constraint firstItem="Feg-VM-jUf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gB0-8W-G9z" secondAttribute="trailing" constant="24" identifier="Secondary action button minimum spacing after image view - landscape" id="dN2-Ih-eEj" userLabel="Secondary action button minimum spacing after image view - landscape"/>
+                                    <constraint firstItem="elG-N9-aqH" firstAttribute="top" secondItem="Aft-rr-icV" secondAttribute="top" constant="316" id="duO-Dq-vsv"/>
                                     <constraint firstItem="Feg-VM-jUf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Aft-rr-icV" secondAttribute="leading" constant="24" identifier="Secondary button minimum left padding - portrait" id="jgB-Ie-frE" userLabel="Secondary button minimum left padding - portrait"/>
                                     <constraint firstItem="gB0-8W-G9z" firstAttribute="top" secondItem="Aft-rr-icV" secondAttribute="top" identifier="Image view no top padding in card view" id="nIg-YC-8uR" userLabel="Image view no top padding in card view"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="650" id="nRl-yZ-E1M" userLabel="Max card view width on tablet"/>
                                     <constraint firstAttribute="trailing" secondItem="oVh-9O-yfC" secondAttribute="trailing" constant="24" identifier="Title label right padding" id="pnO-B6-iqg" userLabel="Title label right padding"/>
+                                    <constraint firstItem="elG-N9-aqH" firstAttribute="width" secondItem="Aft-rr-icV" secondAttribute="width" constant="-128" id="rvo-dZ-sIr"/>
                                     <constraint firstItem="gB0-8W-G9z" firstAttribute="leading" secondItem="Aft-rr-icV" secondAttribute="leading" identifier="Image view no left padding in card view" id="wTO-Mi-2vr" userLabel="Image view no left padding in card view"/>
                                     <constraint firstAttribute="trailing" secondItem="gB0-8W-G9z" secondAttribute="trailing" identifier="Image view no right padding in card view - portrait" id="xX5-sm-qJG" userLabel="Image view no right padding in card view - portrait"/>
                                 </constraints>
@@ -517,10 +521,10 @@
                                         <exclude reference="7IV-jj-DjU"/>
                                         <exclude reference="RVJ-ts-fU5"/>
                                         <exclude reference="T6F-Mi-UaM"/>
-                                        <exclude reference="dN2-Ih-eEj"/>
-                                        <exclude reference="jgB-Ie-frE"/>
                                         <exclude reference="6oY-Eb-2Mh"/>
                                         <exclude reference="Q0o-hu-ttH"/>
+                                        <exclude reference="dN2-Ih-eEj"/>
+                                        <exclude reference="jgB-Ie-frE"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact">
@@ -528,8 +532,8 @@
                                         <include reference="Voc-mp-Yh8"/>
                                         <include reference="4aZ-wP-20V"/>
                                         <include reference="7IV-jj-DjU"/>
-                                        <include reference="dN2-Ih-eEj"/>
                                         <include reference="Q0o-hu-ttH"/>
+                                        <include reference="dN2-Ih-eEj"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=regular">
@@ -537,8 +541,8 @@
                                         <include reference="Voc-mp-Yh8"/>
                                         <include reference="4aZ-wP-20V"/>
                                         <include reference="7IV-jj-DjU"/>
-                                        <include reference="dN2-Ih-eEj"/>
                                         <include reference="Q0o-hu-ttH"/>
+                                        <include reference="dN2-Ih-eEj"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -546,8 +550,8 @@
                                         <include reference="xX5-sm-qJG"/>
                                         <include reference="RVJ-ts-fU5"/>
                                         <include reference="T6F-Mi-UaM"/>
-                                        <include reference="jgB-Ie-frE"/>
                                         <include reference="6oY-Eb-2Mh"/>
+                                        <include reference="jgB-Ie-frE"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -589,10 +593,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTd-sb-y8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="426.08695652173918" y="633.48214285714278"/>
+            <point key="canvasLocation" x="426.08695652173918" y="632.8125"/>
         </scene>
     </scenes>
     <resources>
         <image name="close-with-transparency.png" width="44" height="44"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
